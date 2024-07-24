@@ -15,23 +15,24 @@
   </style>
 </head>
 <body>
-  <div class="container">
-  <h1 class="text-center mt-2 mb-4">{{company_name}}</h1>
+  {% include 'nav.html' %}
   <img class="img-fluid" id="banner" src="/static/bg.jpg">
-  
-  <h2 class="text-center mt-4 mb-2">About {{company_name}}</h2>
-  <p class="lead">Welcome to {{company_name}}, your premier career application platform designed to elevate your professional journey. At {{company_name}}, we are passionate about connecting talented individuals with the right opportunities, enabling them to achieve their career aspirations seamlessly and efficiently.</p>
-  
-  <h2 class="text-center mt-4 mb-2">Explore Our Opportunities</h2>
+  <div class="container">
+  <h1 class="text-center mt-4 mb-4">{{company_name}}</h1>  
+    <div class="row" style="margin-bottom:16px">
+      <div class="col-md-6">
+  <p class="lead"> Welcome to {{company_name}}, your premier career application platform designed to elevate your professional journey. At {{company_name}}, we are passionate about connecting talented individuals with the right opportunities, enabling them to achieve their career aspirations seamlessly and efficiently.</p>
+      </div>
+      <div class="d-none d-md-block col-md-6">
+      <img src="/static/picture.jpg" style="height:450px;border-radius:8px;">
+      </div>
+      </div>
+  <h2 class="text-center mt-4 mb-4">Explore Our Opportunities</h2>
   <div>
     {% for job in jobs %}
     {% include 'jobs.html' %}
   {% endfor %}
   </div>
-    <div class="text-center">
-  <button class="btn btn-primary btn-lg">Contact Us</button>
-      <p class="mt-4">Copyright 2022, {{company_name}}</p>
-      </div>
-    </div>
+        {% include 'footer.html' %}
 </body>
 </html>
